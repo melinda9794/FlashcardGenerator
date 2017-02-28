@@ -1,0 +1,4 @@
+{"text1":"","text2":"was the "Boy Who Lived.","cloze":"Harry Potter"}
+{"text1":"","text2":"was the half-blood prince.","cloze":"Severus Snape"}
+{"text1":"","text2":"is the shape of Harry's Patronus.","cloze":"A stag"}
+{"text1":"","text2":"is the greatest Headmaster Hogwarts ever had.","cloze":"Albus Dumbledore"}

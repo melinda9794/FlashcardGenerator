@@ -1,0 +1,5 @@
+
+{"front":"How many Weasleys are there in Harry Potter?","back":"Seven"}
+{"front":"Who is also known as Padfoot?","back":"Sirius Black"}
+{"front":"What present did Hagrid give Harry for his birthday in book one?","back":"Hedwig"}
+{"front":"What is the name of the Weasley who works with dragons?","back":"Charlie Weasley"}
