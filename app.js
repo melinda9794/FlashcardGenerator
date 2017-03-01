@@ -6,7 +6,7 @@
 var inquirer = require('inquirer');
 var fs = require('fs');
 var Basic = require("./basicflashcard");
-var Cloze = require('./clozeflashcard')
+var Cloze = require("./clozeflashcard");
 
 
 
@@ -123,7 +123,53 @@ function createFlash() {
   };  
 }
 
+//Cloze flaschard save function
+ClozeFlashcard.prototype.save = function() {
+    cardList.savedCloze.push(this);
+};
+//basic flaschard save function
+BasicFlashcard.prototype.save = function() {
+    cardList.savedBasic.push(this);
+};
 
+//The object that holds new cards and the methods to save new cards.
+var cardArray = {
+    savedBasic: [],
+    savedCloze: [],
+
+    newBasic: {
+        front: "",
+        back: "",
+        newCard: function() {
+            var front = this.front;
+            var back = this.back;
+            var card = new BasicFlashcard(front, back);
+            card.save();
+            console.log(JSON.stringify(cardArray.savedBasic));
+            fs.appendFile("basicCard.txt", JSON.stringify(cardArray.savedBasic[cardArray.savedBasic.length-1])+'\n', "utf8", function(err) {
+                if (err) throw err;
+                console.log("Saved to our library!");
+            });
+        }
+    },
+
+newCloze: {
+        front: "",
+        back: "",
+        cloze: "",
+        newCard2: function() {
+            var front = this.front;
+            var back = this.back;
+            var cloze = this.cloze;
+            var card = new ClozeFlashcard(front, cloze, back);
+            card.save();
+            console.log(JSON.stringify(cardArray.savedCloze));
+            fs.appendFile("clozeCard.txt", JSON.stringify(cardArray.savedCloze[cardArray.savedCloze.length-1])+'\n', "utf8", function(err) {
+                if (err) throw err;
+                console.log("Saved to our library!");
+            });
+        }
+    },
 
     // handle the first repsonse input from the user
     // var handleClozeResponse = function(clozeAnswers) {
