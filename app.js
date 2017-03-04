@@ -100,6 +100,8 @@ function createFlash() {
             cardList.newCloze.newCard();
             createCloze2();
         });
+   }   
+
 
         function createCloze2() {
     inquirer.prompt([
@@ -118,7 +120,7 @@ function createFlash() {
     }    
 
 
-} else {
+else {
     console.log('Please input command either "Basic" or "Cloze" to select the type of flash card you would like to save.');
   };  
 }
