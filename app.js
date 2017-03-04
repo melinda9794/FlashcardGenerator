@@ -101,7 +101,10 @@ function createFlash() {
             createCloze2();
         });
    }   
-
+else {
+    console.log('Please input command either "Basic" or "Cloze" to select the type of flash card you would like to save.');
+  };  
+}
 
         function createCloze2() {
     inquirer.prompt([
@@ -119,11 +122,6 @@ function createFlash() {
         });  
     }    
 
-
-else {
-    console.log('Please input command either "Basic" or "Cloze" to select the type of flash card you would like to save.');
-  };  
-}
 
 //Cloze flaschard save function
 ClozeFlashcard.prototype.save = function() {
