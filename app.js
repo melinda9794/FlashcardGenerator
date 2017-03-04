@@ -117,7 +117,7 @@ else {
             if (user.again === true) {
                 createCloze2();
             } else {
-                initialPrompt();
+                createFlash();
             }
         });  
     }    
@@ -136,8 +136,8 @@ BasicFlashcard.prototype.save = function() {
 var cardArray = {
     savedBasic: [],
     savedCloze: [],
-
-    newBasic: {
+}
+ var newBasic= {
         front: "",
         back: "",
         newCard: function() {
@@ -151,9 +151,9 @@ var cardArray = {
                 console.log("Saved to our library!");
             });
         }
-    },
+    };
 
-newCloze: {
+var newCloze= {
         front: "",
         back: "",
         cloze: "",
@@ -169,7 +169,8 @@ newCloze: {
                 console.log("Saved to our library!");
             });
         }
-    },
+    };
+   
 
     // handle the first repsonse input from the user
     // var handleClozeResponse = function(clozeAnswers) {
