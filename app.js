@@ -122,22 +122,23 @@ else {
         });  
     }    
 
+//basic flashcard save function
+// BasicFlashcard.prototype.save = function() {
+//     cardList.savedBasic.push(this);
+// };
 
-//Cloze flaschard save function
-ClozeFlashcard.prototype.save = function() {
-    cardList.savedCloze.push(this);
-};
-//basic flaschard save function
-BasicFlashcard.prototype.save = function() {
-    cardList.savedBasic.push(this);
-};
+// //Cloze flaschard save function
+// ClozeFlashcard.prototype.save = function() {
+//     cardList.savedCloze.push(this);
+// };
+
 
 //The object that holds new cards and the methods to save new cards.
 var cardArray = {
     savedBasic: [],
     savedCloze: [],
 }
- var newBasic= {
+ var BasicFlashcard = {
         front: "",
         back: "",
         newCard: function() {
@@ -153,15 +154,15 @@ var cardArray = {
         }
     };
 
-var newCloze= {
+var ClozeFlashcard = {
         front: "",
         back: "",
         cloze: "",
         newCard2: function() {
-            var front = this.front;
-            var back = this.back;
+            var part1 = this.part1;
+            var part2 = this.part2;
             var cloze = this.cloze;
-            var card = new ClozeFlashcard(front, cloze, back);
+            var card = new ClozeFlashcard(part1, cloze, part2);
             card.save();
             console.log(JSON.stringify(cardArray.savedCloze));
             fs.appendFile("clozeCard.txt", JSON.stringify(cardArray.savedCloze[cardArray.savedCloze.length-1])+'\n', "utf8", function(err) {
